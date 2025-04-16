@@ -2,8 +2,32 @@
 <html>
 <head>
   <title>Chatbot Contable Paraguay</title>
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
   <style>
+    /* Estilos para personalizar la apariencia del messenger y la página */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+
+    /* Contenedor para el logo */
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 100px; /* Ajusta el tamaño según el logo */
+      height: auto;
+    }
+
+    /* Personalización del df-messenger */
     df-messenger {
       --df-messenger-title: "Asistente Contable PY";
       --df-messenger-bot-message: #f1f1f1;
@@ -13,12 +37,21 @@
   </style>
 </head>
 <body>
+
+  <!-- Contenedor para el logo -->
+  <div class="logo-container">
+    <img src="chatbotlogo.png" alt="Logo del Chatbot">
+  </div>
+
+  <!-- Integración del messenger de Dialogflow con el logo y el agente -->
   <df-messenger
     intent="WELCOME"
     chat-title="Asistente Contable PY"
-    agent-id="30641279-087b-45fb-9236-dc1fba0a1a1c
-"
+    agent-id="30641279-087b-45fb-9236-dc1fba0a1a1c"
     language-code="es">
   </df-messenger>
+
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
 </body>
 </html>
