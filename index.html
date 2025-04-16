@@ -5,108 +5,63 @@
   <title>Contaplus PY</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
     }
 
-    .chat-header {
+    .encabezado {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      background-color: #0D47A1;
+      background-color: #0066cc;
       color: white;
       padding: 10px 20px;
-      border-radius: 8px 8px 0 0;
-      width: fit-content;
     }
 
-    .chat-header img {
-      width: 32px;
-      height: 32px;
+    .encabezado img {
+      height: 40px;
+      margin-left: 10px;
     }
 
-    .chat-title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .messenger-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
+    /* Asegura que el chatbot esté centrado */
     df-messenger {
-      --df-messenger-title: "Contaplus PY";
-      --df-messenger-bot-message: #f1f1f1;
-      --df-messenger-user-message: #e6f2ff;
-      --df-messenger-accent-color: #0066cc;
-    }
-
-    /* ==== Reemplazo del ícono flotante ==== */
-    df-messenger::part(button) {
-      background: transparent !important;
-    }
-
-    df-messenger::part(icon) {
-      display: none !important; /* Oculta ícono predeterminado */
-    }
-
-    /* Nuevo ícono (tu logo) */
-    .custom-launcher {
       position: fixed;
       bottom: 16px;
       right: 16px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      overflow: hidden;
-      z-index: 9999;
-      cursor: pointer;
-      pointer-events: none; /* Deja que df-messenger reciba los clics */
     }
 
-    .custom-launcher img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    /* Reemplaza ícono flotante por tu logo */
+    df-messenger::part(button) {
+      background-color: transparent !important;
+      background-image: url('79b068ba-85d6-4499-a34a-89be3c38a6ee.png'); /* Usa la ruta correcta */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    df-messenger::part(icon) {
+      display: none !important;
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado con logo y texto -->
-  <div class="messenger-container">
-    <div class="chat-header">
-      <span class="chat-title">Bienvenido a Contaplus PY</span>
-      <img src="chatbotlogo.jpg" alt="Logo del Chatbot">
-    </div>
-
-    <df-messenger
-      intent="WELCOME"
-      chat-title="Contaplus PY"
-      agent-id="30641279-087b-45fb-9236-dc1fba0a1a1c"
-      language-code="es">
-    </df-messenger>
+  <!-- Encabezado personalizado -->
+  <div class="encabezado">
+    <h2>Bienvenido a Contaplus PY</h2>
+    <img src="chatbotlogo.png" alt="Logo">
   </div>
 
-  <!-- Ícono flotante personalizado -->
-  <div class="custom-launcher">
-    <img src="chatbotlogo.jpg" alt="Logo flotante">
-  </div>
+  <!-- Dialogflow Messenger -->
+  <df-messenger
+    intent="WELCOME"
+    chat-title="Contaplus PY"
+    agent-id="30641279-087b-45fb-9236-dc1fba0a1a1c"
+    language-code="es">
+  </df-messenger>
 
-  <!-- Script Dialogflow -->
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 
 </body>
