@@ -25,17 +25,15 @@
       margin-left: 10px;
     }
 
-    /* Asegura que el chatbot esté centrado */
     df-messenger {
       position: fixed;
       bottom: 16px;
       right: 16px;
     }
 
-    /* Reemplaza ícono flotante por tu logo */
     df-messenger::part(button) {
       background-color: transparent !important;
-      background-image: url('79b068ba-85d6-4499-a34a-89be3c38a6ee.png'); /* Usa la ruta correcta */
+      background-image: url('79b068ba-85d6-4499-a34a-89be3c38a6ee.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -54,10 +52,9 @@
     <img src="chatbotlogo.png" alt="Logo">
   </div>
 
-  <!-- Dialogflow Messenger -->
+  <!-- Aquí va el chatbot de Dialogflow -->
   <df-messenger
-    intent="WELCOME"
-    chat-title="Contaplus PY"
+    chat-title="ContaPlusBot"
     agent-id="30641279-087b-45fb-9236-dc1fba0a1a1c"
     language-code="es">
   </df-messenger>
@@ -66,4 +63,3 @@
 
 </body>
 </html>
-
